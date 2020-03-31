@@ -1,0 +1,67 @@
+dataTypes
+--------------
+string, number, boolean, map, array, null, timestamp, geopoint, reference (document path)
+
+users (external - from Firebase - https://firebase.google.com/docs/reference/js/firebase.User)
+--------------
+    displayName         string | null
+    email               string | null
+    emailVerified       boolean
+    phoneNumber         string | null
+    photoURL            string | null
+    uid                 string
+    
+
+users (internal) ???
+--------------
+    ext_user_id     string
+    user_id         INT
+    
+  
+expenses (https://plaid.com/docs/#transactions)
+--------------
+    user_id                 string
+    expense_id              string
+    account_id              string
+    category                [string] | null
+    name                    string
+    amount                  number
+    iso_currency_code       string | null
+    date                    timestamp
+    location                geopoint | null
+    pending                 boolean
+
+
+income - TODO
+--------------
+
+
+goals
+--------------
+goal_id         string
+image           string | null
+name            string
+description     string | null
+price           number
+time            timestamp | null?
+priority        number (0-4)
+
+
+
+
+categories_expenses
+--------------  
+category_id         string
+name                string
+
+
+budget - TODO
+--------------  
+budget_id
+category_id
+time
+amount
+
+
+categories_income - TODO
+--------------
