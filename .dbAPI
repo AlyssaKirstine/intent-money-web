@@ -1,0 +1,57 @@
+users (external - from Firebase - https://firebase.google.com/docs/reference/js/firebase.User)
+--------------
+firebase.auth().createUserWithEmailAndPassword(email, password) - create a password based account
+firebase.auth().signInWithEmailAndPassword(email, password) - sign in a user with an email and password
+firebase.auth().signOut() - signs a user out
+
+firebase.auth().currentUser - get the currently signed in user (but preferred method is below)
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+  } else {
+    // No user is signed in.
+  }
+});
+
+currentUser.uid - the current user's ID
+currentUser.name - the current user's display name
+currentUser.email - the current user's email
+
+currentUser.updateProfile - update the current user's basic profile info
+user.updateEmail - update the current user's email
+user.delete() - delete the current user
+
+See https://firebase.google.com/docs/auth/web/manage-users for more.
+
+
+expenses
+--------------
+GET /expenses/{user_id} - returns an array of expenses for the user
+POST /expenses/{user_id} - adds new expense for the user
+
+GET /expenses/{expense_id} - return the specified expense
+PUT /expenses/{expense_id} - update the specified expense
+DELETE /expenses/{expense_id} - delete the specified expense
+
+GET /expenses/{category_id} - returns the expenses that match that category
+GET /expenses/{goal_id} - returns the expenses that match that goal
+
+
+categories_expenses
+--------------  
+GET /categories/{user_id} - returns an array of the user's expense categories
+POST /categories/{user_id} - adds new category for the user
+
+GET /categories/{category_id} - return the specified category
+PUT /categories/{category_id} - update the specified category
+DELETE /categories/{category_id} - delete the specified category
+
+
+goals
+--------------
+GET /goals/{user_id} - returns an array of the user's goals
+POST /goals/{user_id} - adds new goal for the user
+
+GET /goals/{goal_id} - return the specified goal
+PUT /goals/{goal_id} - update the specified goal
+DELETE /goals/{goal_id} - delete the specified goal
