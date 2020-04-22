@@ -12,8 +12,8 @@ const Home = () => {
 
             <div>
                 <h1>My Budget</h1>
-                <TransactionsList />
-                <AddTransactionForm />
+                {/* <TransactionsList />
+                <AddTransactionForm /> */}
             </div>
         </>
     )

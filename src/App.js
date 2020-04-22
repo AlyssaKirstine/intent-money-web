@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import {  BrowserRouter as  Router, Route } from 'react-router-dom'
 import './App.css';
 
@@ -26,11 +25,12 @@ function App() {
   //   }
   // }, [])
   return (
-    <AuthProvider>
+    // <AuthProvider>
       <Router>
         <div>
           <Route exact path="/launch" component={Launch} />
-          <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/" component={Home} />
+          {/* <PrivateRoute exact path="/" component={Home} /> */}
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/expenses" component={Expenses} />
@@ -38,7 +38,7 @@ function App() {
           <Route exact path="/reports" component={Reports} />
         </div>
       </Router>
-    </AuthProvider>
+    // </AuthProvider>
   );
 }
 
