@@ -2,15 +2,17 @@ import React from 'react';
 import {  BrowserRouter as  Router, Route } from 'react-router-dom'
 import './App.css';
 
+import withSplashScreen from './components/withSplashScreen';
 import Expenses from './pages/Expenses'
 import Goals from './pages/Goals'
 import Home from  './pages/Home'
-import Launch from './pages/Launch'
 import Login from './pages/Login'
 import Reports from './pages/Reports'
 import Signup  from './pages/Signup'
 import { AuthProvider } from './Auth'
 import PrivateRoute from './PrivateRoute'
+
+require("regenerator-runtime/runtime");
 
 // firebase.firestore().collection('transactions').add({
 //   title: 'Wendy\'s',
@@ -28,7 +30,6 @@ function App() {
     // <AuthProvider>
       <Router>
         <div>
-          <Route exact path="/launch" component={Launch} />
           <Route exact path="/" component={Home} />
           {/* <PrivateRoute exact path="/" component={Home} /> */}
           <Route exact path="/signup" component={Signup} />
@@ -42,4 +43,4 @@ function App() {
   );
 }
 
-export default App;
+export default withSplashScreen(App);

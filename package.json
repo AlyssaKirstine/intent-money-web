@@ -43,6 +43,7 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
+    "regenerator-runtime": "^0.13.5",
     "style-loader": "^1.1.4",
     "svg-url-loader": "^5.0.0",
     "webpack": "^4.43.0",
